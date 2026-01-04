@@ -1,144 +1,994 @@
-<!doctype html>
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8'>
-    <meta name='viewpoint' content='width=device-width, scale-initial=1.0'>
-    <meta property='og:title' content='KHÓA GIẢI ĐỀ ĐGNL EMPIRE'>
-    <link rel='canonical' href='#'>
-    <title>KHÓA GIẢI ĐỀ ĐGNL EMPIRE</title>
-    <link rel='stylesheet' href='styles.css'>
-    <script href='script.css' defer></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    </head>
-  
-  <body>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Speaking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
-      * {
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:'Poppins',Sans-Serif;
-      }
-      body {
-        display:flex;
-        cursor : pointer;
-        justify-content:center;
-        align-items:center;
-        min-height:100vh;
-        background: url('https://kenh14cdn.com/thumb_w/600/2018/2/11/photo1518350471722-15183504717221775202913.gif') no-repeat;
-        background-size:cover;
-        background-position:center;
-      }
-      .div1 {
-        border-radius:15px;
-        width:420px;
-        background:transparent;
-        color:#fff;
-        padding:10px;
-        padding:30px 40px;
-        opacity : 1.0;
-        border:2px solid rgba(255,255,255,.2);
-      }
-      .div1 h1 {
-        text-align:Center;
-        font-size:36px;
-      }
-      .div1 .input-box {
-        position:relative;
-        width:100%;
-        height:50px;
-        margin :30px 0;
-      }
-      .input-box input{
-        width:100%;
-        height:100%;
-        background:transparent;
-        border:none;
-        outline:none;
-        border : 2px solid rgba(255,255,255,.2);
-        border-radius:40px;
-        color:white;
-        font-size:18px;
-        padding:20px 45px 20px 20px;
-      }
-      .input-box input::placeholder{
-        color:#fff;
-      }
-      .input-box i {
-        position:absolute;
-        right:10px;
-        top:50%;
-        transform:translateY(-50%);
-        font-size:20px;
-      }
-      .div1 .remember-forgot {
-        display : flex;
-        justify-content: space-between;
-        font-size:14px;
-        margin:-15px 0 15px ;
-      }
-      .remember-forgot label input {
-        accent-color: white;
-        margin-right:3px;
-      }
-      .remember-forgot a {
-        color :#fff;
-        text-decoration: none;
-      }
-      .remember-forgot a:hover{
-        text-decoration:underline;
-      }
-      .div1 .btn{
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --purple: #A29BFE;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --glass-bg: rgba(255, 255, 255, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.8);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        width:100%;
-        height:40px;
-        background:#fff;
-        border : none;
-        border-radius:40px;
-        outline : none;
-        box-shadow:0 0 10px rgba(0,0,0,.9);
-        cursor:pointer;
-        font-size:16px;
-        color :#333;
-      }
-      .div1 .register {
-        font-size:14.5px;
-        text-align:center;
-        margin-top:10px;
-      }
-      .div1 .register p a {
-        color:#fff;
-        font-weight:600;
-        text-decoration:none;
-      }
-      .div1 .register p a {
-        text-decoration:underline;
-      }
-      
-      
-      
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffd1ff, #a1c4fd, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            cursor: pointer;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        #animal-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), #FF8E53);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+        }
+        
+        p.subtitle {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 50px;
+            max-width: 700px;
+            background: var(--glass-bg);
+            padding: 20px 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .btn-cute {
+            padding: 15px 50px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        .btn-cute:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 30px rgba(255, 107, 107, 0.5);
+        }
+        
+        /* SECTION CONTAINERS */
+        .lessons-section { 
+            padding: 50px 0 100px 0; 
+        }
+        
+        .section-container {
+            margin-bottom: 80px;
+            padding: 40px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 40px;
+            border: 3px solid var(--glass-border);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        /* Màu cho từng section */
+        .section-1 .section-title { 
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+        }
+        .section-2 .section-title { 
+            background: linear-gradient(135deg, #4ECDC4, #44A08D);
+            color: white;
+        }
+        .section-3 .section-title { 
+            background: linear-gradient(135deg, #A29BFE, #6C5CE7);
+            color: white;
+        }
+        .section-4 .section-title { 
+            background: linear-gradient(135deg, #FFE66D, #FFA502);
+            color: white;
+        }
+        
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .lesson-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px) saturate(150%);
+            border: 3px solid var(--glass-border);
+            border-radius: 35px;
+            padding: 35px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .lesson-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section-1 .lesson-card:hover { border-color: #FF6B6B; }
+        .section-2 .lesson-card:hover { border-color: #4ECDC4; }
+        .section-3 .lesson-card:hover { border-color: #A29BFE; }
+        .section-4 .lesson-card:hover { border-color: #FFE66D; }
+        
+        .lesson-number {
+            font-size: 5rem;
+            font-weight: 800;
+            color: rgba(255,255,255,0.5);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            z-index: 0;
+            -webkit-text-stroke: 2px currentColor;
+            opacity: 0.3;
+        }
+        
+        .section-1 .lesson-number { color: #FF6B6B; }
+        .section-2 .lesson-number { color: #4ECDC4; }
+        .section-3 .lesson-number { color: #A29BFE; }
+        .section-4 .lesson-number { color: #FFE66D; }
+        
+        .card-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .lesson-tag {
+            color: white;
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-1 .lesson-tag { background: #FF6B6B; }
+        .section-2 .lesson-tag { background: #4ECDC4; }
+        .section-3 .lesson-tag { background: #A29BFE; }
+        .section-4 .lesson-tag { background: #FFE66D; color: #2d3436; }
+        
+        .lesson-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+        
+        .lesson-icon {
+            font-size: 3rem;
+            margin-bottom: auto;
+            align-self: flex-start;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+        }
+        
+        /* MODAL */
+        .lesson-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s;
+        }
+        .lesson-overlay.active { opacity: 1; pointer-events: all; }
+        
+        .overlay-content {
+            width: 85%;
+            height: 85%;
+            background: rgba(255, 255, 255, 0.95);
+            border: 3px solid var(--secondary);
+            border-radius: 50px;
+            padding: 50px;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(78, 205, 196, 0.3);
+            display: grid;
+            grid-template-columns: 1.5fr 2fr;
+            gap: 50px;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 3rem;
+            cursor: pointer;
+            color: var(--primary);
+            background: none;
+            border: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+        .close-btn:hover { transform: rotate(90deg) scale(1.2); }
+        
+        .video-placeholder {
+            background: linear-gradient(to bottom right, var(--accent), var(--primary));
+            border-radius: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+            color: white;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        
+        .lesson-details h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .lesson-details p, .lesson-details li {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+        /* ================= CHATBOT TỔNG THỂ ================= */
+        #chatbot-wrapper {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            width: 360px;
+            height: 520px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            display: none; /* Mặc định ẩn */
+            flex-direction: column;
+            z-index: 10000;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+            
+            /* Hiệu ứng xuất hiện */
+            transform: translateY(30px) scale(0.9);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+
+        /* Class kích hoạt khi bấm vào bong bóng */
+        #chatbot-wrapper.active {
+            display: flex;
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* ================= HEADER CHAT ================= */
+        #chat-header {
+            background: linear-gradient(135deg, #4ECDC4, #45b7af);
+            color: white;
+            padding: 18px;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* ================= NỘI DUNG CHAT (MESSAGES) ================= */
+        #chatBox {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #f9fbfb;
+            scroll-behavior: smooth;
+        }
+
+        /* Tùy chỉnh thanh cuộn */
+        #chatBox::-webkit-scrollbar { width: 5px; }
+        #chatBox::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 10px; }
+
+        /* Style chung cho bong bóng tin nhắn */
+        .msg-bubble {
+            max-width: 85%;
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.5;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        /* Tin nhắn của Bạn */
+        .user-msg {
+            align-self: flex-end;
+            background: #FF6B6B;
+            color: white;
+            border-radius: 18px 18px 2px 18px;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+        }
+
+        /* Tin nhắn của AI */
+        .ai-msg {
+            align-self: flex-start;
+            background: white;
+            color: #2d3436;
+            border-radius: 18px 18px 18px 2px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ================= KHU VỰC NHẬP LIỆU ================= */
+        #chat-input-area {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: white;
+            border-top: 1px solid #eee;
+            gap: 10px;
+        }
+
+        #userInput {
+            flex: 1;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            padding: 10px 15px;
+            outline: none;
+            resize: none;
+            font-family: inherit;
+            font-size: 14px;
+            max-height: 100px;
+            transition: border 0.3s;
+            background: #fcfcfc;
+        }
+
+        #userInput:focus { border-color: #4ECDC4; background: white; }
+
+        #sendBtn {
+            background: #4ECDC4;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            flex-shrink: 0;
+        }
+
+        #sendBtn:hover { transform: scale(1.1); background: #3db9b1; }
+
+        /* ================= HIỆU ỨNG TYPING ================= */
+        .typing-dots { font-style: italic; color: #999; font-size: 12px; }
     </style>
-    <div class='div1'>
-      <form action=''>
-        <h1>ĐĂNG NHẬP</h1>
-        <div class='input-box'>
-          <input type='text' placeholder='Tài khoản' required>
-          <i class='bx bxs-user'></i>
-        </div>
-        <div class='input-box'>
-          <input type='password' placeholder='Mật khẩu' required>
-          <i class='bx bxs-lock-alt'></i>
-        </div>
-        <div class='remember-forgot'>
-             <label><input type='checkbox'>Quên mật khẩu</label>
-             <a href='#'>Quên mật khẩu</a>
-        </div>
-        <button type='submit' class='btn'>ĐĂNG NHẬP</button>
-        <div class='register'>
-          <p>CHƯA CÓ TÀI KHOẢN-<a href='#'>Register</a></p>
-        </div>
-      </form>
-    </div>
+</head>
+<body>
+    <canvas id="animal-canvas"></canvas>
     
-  </body>
+    <div class="lesson-overlay" id="overlay">
+        <div class="overlay-content">
+    <button class="close-btn" onclick="closeLesson()">&times;</button>
+    
+    <div class="video-placeholder" id="video-container">
+        <div style="text-align: center" id="placeholder-content">
+            <span style="font-size: 4rem;">🎙️</span><br>
+            Speaking Practice Arena
+        </div>
+    </div>
+
+    <div class="lesson-details">
+        <span class="lesson-tag" style="background: var(--primary)">SPEAKING PART 1-3</span>
+        <h2 id="modal-title">Lesson Title</h2>
+        <p>Bài học tập trung vào phản xạ Speaking tự nhiên. Hệ thống AI sẽ chấm điểm độ trôi chảy và từ vựng.</p>
+        <br>
+        <ul style="list-style: none;">
+            <li style="margin-bottom: 15px; display: flex; align-items: center; font-weight: 700; color: var(--text-dark);">
+                <span style="margin-right: 10px; color: var(--secondary); font-size: 1.5rem;">✨</span> Fluency Booster
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; font-weight: 700; color: var(--text-dark);">
+                 <span style="margin-right: 10px; color: var(--secondary); font-size: 1.5rem;">🗣️</span> Pronunciation Check
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; font-weight: 700; color: var(--text-dark);">
+                 <span style="margin-right: 10px; color: var(--secondary); font-size: 1.5rem;">💡</span> Advanced Vocabulary
+            </li>
+        </ul>
+        <button class="btn-cute" style="margin-top: 30px; width: 100%;" onclick="playVideo()">Bắt Đầu Học ngay!</button>
+    </div>
+</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>IELTS SPEAKING <br> WONDERLAND ✨</h1>
+            <p class="subtitle">Chinh phục kỹ năng Nói với 40 chủ đề siêu thú vị được chia thành 4 giai đoạn học tập!</p>
+            <button class="btn-cute" onclick="scrollToLessons()">Khám phá 40 Chủ đề 🚀</button>
+        </header>
+
+        <div class="lessons-section" id="lessons">
+            
+            <!-- SECTION 1: Beginner Foundation (1-10) -->
+            <div class="section-container section-1">
+                <div class="section-header">
+                    <div class="section-title">🌱 Giai đoạn 1: Nền tảng cơ bản</div>
+                    <p class="section-subtitle">Bài 1-10: Xây dựng nền tảng Speaking vững chắc</p>
+                </div>
+                <div class="lessons-grid" id="section-1-grid"></div>
+            </div>
+
+            <!-- SECTION 2: Intermediate Skills (11-20) -->
+            <div class="section-container section-2">
+                <div class="section-header">
+                    <div class="section-title">🚀 Giai đoạn 2: Phát triển kỹ năng</div>
+                    <p class="section-subtitle">Bài 11-20: Nâng cao khả năng diễn đạt</p>
+                </div>
+                <div class="lessons-grid" id="section-2-grid"></div>
+            </div>
+
+            <!-- SECTION 3: Advanced Fluency (21-30) -->
+            <div class="section-container section-3">
+                <div class="section-header">
+                    <div class="section-title">💎 Giai đoạn 3: Trôi chảy nâng cao</div>
+                    <p class="section-subtitle">Bài 21-30: Thành thạo các chủ đề phức tạp</p>
+                </div>
+                <div class="lessons-grid" id="section-3-grid"></div>
+            </div>
+
+            <!-- SECTION 4: Mastery Level (31-40) -->
+            <div class="section-container section-4">
+                <div class="section-header">
+                    <div class="section-title">👑 Giai đoạn 4: Trình độ chuyên nghiệp</div>
+                    <p class="section-subtitle">Bài 31-40: Hoàn thiện kỹ năng Speaking band 8.0+</p>
+                </div>
+                <div class="lessons-grid" id="section-4-grid"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="chat-bubble" onclick="toggleChat()" style="cursor: pointer; z-index: 10000;">
+    💬
+</div>
+
+    <div id="chatbot-wrapper">
+        <div id="chat-header" style="background: #FF6B6B; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <strong style="font-weight: 800;">IELTS AI TUTOR ✨</strong>
+            <span onclick="toggleChat()" style="cursor: pointer; font-size: 20px;">&times;</span>
+        </div>
+        
+        <div id="chatBox" style="flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; background: #fff;">
+            </div>
+
+        <div id="chat-input-area" style="padding: 10px; border-top: 1px solid #eee; display: flex;">
+            <textarea id="userInput" placeholder="Hỏi giám khảo AI..." style="flex: 1; border: none; outline: none; resize: none; padding: 5px;"></textarea>
+            <button onclick="sendMessage()" id="sendBtn" style="background: #FF6B6B; border: none; color: white; padding: 0 15px; border-radius: 10px; margin-left: 5px; cursor: pointer;">Gửi</button>
+        </div>
+    </div>
+
+    <script>
+    // --- 1. BIẾN TOÀN CỤC ---
+    let currentVideoId = '';
+
+    // CANVAS ANIMATION (GIỮ NGUYÊN PHẦN NỀN ĐỘNG)
+    const canvas = document.getElementById('animal-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let animals = [];
+    
+    const animalImages = [
+        'https://cdn-icons-png.flaticon.com/512/616/616408.png',
+        'https://cdn-icons-png.flaticon.com/512/616/616430.png',
+        'https://cdn-icons-png.flaticon.com/512/616/616554.png',
+        'https://cdn-icons-png.flaticon.com/512/375/375112.png'
+    ];
+
+    class ChubbyAnimal {
+        constructor() {
+            this.img = new Image();
+            this.img.src = animalImages[Math.floor(Math.random() * animalImages.length)];
+            this.loaded = false;
+            this.img.onload = () => { this.loaded = true; };
+            this.size = Math.random() * 80 + 100;
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.8;
+            this.vy = (Math.random() - 0.5) * 0.8;
+            this.angle = 0;
+            this.spinSpeed = (Math.random() - 0.5) * 0.01;
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.angle += this.spinSpeed;
+            if (this.x < -100 || this.x > width + 100) this.vx *= -1;
+            if (this.y < -100 || this.y > height + 100) this.vy *= -1;
+        }
+        draw() {
+            if (!this.loaded) return;
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.angle);
+            ctx.globalAlpha = 0.6;
+            ctx.drawImage(this.img, -this.size/2, -this.size/2, this.size, this.size);
+            ctx.restore();
+        }
+    }
+
+    function initCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        animals = [];
+        for(let i = 0; i < 8; i++) {
+            animals.push(new ChubbyAnimal());
+        }
+    }
+
+    function animateCanvas() {
+        ctx.clearRect(0, 0, width, height);
+        animals.forEach(animal => {
+            animal.update();
+            animal.draw();
+        });
+        requestAnimationFrame(animateCanvas);
+    }
+
+    initCanvas();
+    animateCanvas();
+    window.addEventListener('resize', initCanvas);
+
+    // --- 2. DỮ LIỆU BÀI HỌC (CẤU HÌNH CHO GOOGLE DRIVE) ---
+    // CÁCH LẤY ID: Link Drive là https://drive.google.com/file/d/ABCXYZ123/view -> ID là ABCXYZ123
+    const lessonData = {
+        section1: [
+            { icon: "📚", tag: "Introduction", title: "Giới thiệu chung", videoId: "1xmqYGFs1jHCaxe6lQ6qRKWPU6oj8M9jG" }, 
+            { icon: "❤️", tag: "Strategy", title: "Bảng lý do thích/ghét", videoId: "1x0-nvdrib56qqUe9l5MyLUX9vPtRYXhl" },
+            { icon: "👍", tag: "Questions", title: "Do you like X", videoId: "1fE_NTxlljI9Z6iIu2OfhI7dg1sMUWmjP" },
+            { icon: "⭐", tag: "Strategy", title: "Chiến thuật Favourite", videoId: "1Xn6g9KxWJjCgv3xuOmGaYkrhx9o_7dgz" },
+            { icon: "🎯", tag: "Questions", title: "What kind of X", videoId: "1BGuqWmtUDstWHRgKECWOq-sYw6eIkkVW" },
+            { icon: "⚖️", tag: "Questions", title: "Do you prefer X or Y", videoId: "1_do2EEWY56pk4wsPguEg5JtEL3N4KI-q" },
+            { icon: "🌍", tag: "Questions", title: "Is X popular", videoId: "1lSNNWG2BdItJnLBPVkAgrtB71N5fhgSu" },
+            { icon: "⏰", tag: "Questions", title: "Best time to do X", videoId: "16ua4cyRxjAfOzVrzLEbpjNQseoVt-9QG" },
+            { icon: "📅", tag: "Questions", title: "First/Last time", videoId: "1vIPS3qUBNppCnJdGclPrpqoRlkpkBVcp" },
+            { icon: "👶", tag: "Questions", title: "Childhood memories", videoId: "1YFvASfP5J4m2cKo9ZRwpavqnihdv5aIB" }
+        ],
+        section2: [
+            { icon: "✅", tag: "Questions", title: "Is X suitable for", videoId: "1FtTgbNJjz_HBLwebBLgtIMhbOjlsMnyT" },
+            { icon: "🤔", tag: "Questions", title: "Easy or difficult", videoId: "1ZHkAnQqmER0p5ktwWPhOSm6NCDob2_N4" },
+            { icon: "👎", tag: "Questions", title: "Dislike about X", videoId: "1h3ECFP1je3X156sKvAKp-u1WsD5g3z2A" },
+            { icon: "🔄", tag: "Questions", title: "How often", videoId: "1qC8yV3bH8Snj7caUIdnx6AjrBzWq6c_Y" },
+            { icon: "📈", tag: "Questions", title: "How has X changed", videoId: "1Y8AJSfTPuj-EUIJVxl8MrdMhAwQmk2dy" },
+            { icon: "👴", tag: "Describe", title: "Describe a person", videoId: "18Ksu2YuM4Fm6ap5e2TjruKgRNufnkNgY" },
+            { icon: "👨", tag: "Describe", title: "Describe a friend", videoId: "1Cq1vGI_kglTMrZE0xs_SV0BiAw18JDZq" },
+            { icon: "👔", tag: "Describe", title: "Describe a teacher", videoId: "11Ff2mj2SNAZJm6s3DNJQ6MWfhXX5KuPw" },
+            { icon: "☕", tag: "Describe", title: "Describe a cafe", videoId: "1agRMlsWBi5eBAP8fz7aWMRqwUpgIgSxz" },
+            { icon: "🍜", tag: "Describe", title: "Describe a restaurant", videoId: "1qoZId3iHQLLwOwyOUhs27Yqfvi-zR7xS" }
+        ],
+        section3: [
+            { icon: "🏛️", tag: "Describe", title: "Describe a museum", videoId: "1WZkiaYTzGd3G6nZRrBXq0bZp2fHgesum" },
+            { icon: "🇰🇷", tag: "Describe", title: "Describe a country", videoId: "1vAFAhjw9FQWnwHQmLV_T9cTngpMeN3gA" },
+            { icon: "🏖️", tag: "Describe", title: "Describe a city", videoId: "1CfopiP9Z4S0H7peyZOFZfRr42o-vNWxA" },
+            { icon: "🇬🇧", tag: "Describe", title: "Describe a foreign country", videoId: "17SGGPxG5a92-otXSOwLtE0DY1QruaUNC" },
+            { icon: "🎉", tag: "Describe", title: "Describe a holiday", videoId: "1cMDj08kGmQZIDMyEq1xd3KOW4xsbpw5K" },
+            { icon: "🎂", tag: "Describe", title: "Describe a party", videoId: "116RK7E2Fh-0fqmKcoB6U_Mh5ecarmI5n" },
+            { icon: "🛠️", tag: "Describe", title: "Describe a skill", videoId: "1dwiVxfh1PZObKDC7g5LLBE4AcTC4ap2e" },
+            { icon: "🗺️", tag: "Describe", title: "Describe a situation", videoId: "1J7OVTOd_q06m7b2XpXEIyC8op1SjC38n" },
+            { icon: "⏱️", tag: "Describe", title: "Describe being late", videoId: "h1Uw08-dS2Uk_h0ikBCHFf9jy_K3-zgxZh" },
+            { icon: "👮", tag: "Describe", title: "Describe a rule", videoId: "1XVKZTS8u9kdRbBeChrPCaISDO-vK-Kw5" }
+        ],
+        section4: [
+            { icon: "🪑", tag: "Describe", title: "Describe furniture", videoId: "1Fup51iuEL_VstqBPT-wVmEg3BXJ24Q94" },
+            { icon: "👗", tag: "Describe", title: "Describe clothing", videoId: "1f4J5dXedPZqy3s99BTpoxLR3ugRcfxjb" },
+            { icon: "🎁", tag: "Describe", title: "Describe a gift", videoId: "1R_oTzFUdNpoaBtvF2AKrIchwrhjnMh4n" },
+            { icon: "💻", tag: "Favourite", title: "Favourite website", videoId: "1gzPg08qbtlKMWHQxVPrEyd27NQ2l7ePR" },
+            { icon: "🌅", tag: "Favourite", title: "Favourite time", videoId: "1oVQGaXAgiHnY64ZUGqb-gfic0z2kGfjR" },
+            { icon: "🦁", tag: "Favourite", title: "Favourite animal", videoId: "13uUUimq_BF7KxzcppsHf9UqbTlGgTzZI" },
+            { icon: "🤝", tag: "Discussion", title: "Agree/Disagree", videoId: "1gdlfnrVdO_6MRYAHorgmoj7lTy3iQSSc" },
+            { icon: "⚖️", tag: "Discussion", title: "Pros and Cons", videoId: "1AibU3zZNe_lh1ALzrnEgeWE3Mnoj86TV" },
+            { icon: "🔮", tag: "Discussion", title: "Predictions", videoId: "1qLFJ30BclvvVig0_wBxPmwwWqhM-lvx6" },
+            { icon: "🔄", tag: "Discussion", title: "Differences", videoId: "1Gjocw5Ykb9yArV5hYO3K2zvnb_rnu_6a" }
+        ]
+    };
+
+    function createLessons(sectionData, gridId, startNum) {
+        const grid = document.getElementById(gridId);
+        sectionData.forEach((lesson, index) => {
+            const lessonNum = startNum + index;
+            const card = document.createElement('div');
+            card.classList.add('lesson-card');
+            card.innerHTML = `
+                <div class="lesson-number">${lessonNum}</div>
+                <div class="card-content">
+                    <div class="lesson-icon">${lesson.icon}</div>
+                    <div>
+                        <span class="lesson-tag">${lesson.tag}</span>
+                        <h3 class="lesson-title">Day ${lessonNum}:<br>${lesson.title}</h3>
+                    </div>
+                </div>
+            `;
+            // Sửa lỗi hiển thị tiêu đề
+            card.addEventListener('click', () => openLesson(lessonNum, lesson)); 
+            grid.appendChild(card);
+        });
+    }
+
+    createLessons(lessonData.section1, 'section-1-grid', 1);
+    createLessons(lessonData.section2, 'section-2-grid', 11);
+    createLessons(lessonData.section3, 'section-3-grid', 21);
+    createLessons(lessonData.section4, 'section-4-grid', 31);
+
+    // GSAP ANIMATIONS
+    gsap.from("h1", { y: -100, opacity: 0, duration: 1.5, ease: "elastic.out(1, 0.5)" });
+    gsap.from(".subtitle", { scale: 0.8, opacity: 0, duration: 1, delay: 0.5, ease: "back.out(2)" });
+    gsap.from("header .btn-cute", { y: 50, opacity: 0, duration: 1, delay: 0.8, ease: "elastic.out(1, 0.6)" });
+    
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.section-container').forEach(section => {
+        gsap.from(section.querySelectorAll('.lesson-card'), {
+            scrollTrigger: { trigger: section, start: "top 85%" },
+            scale: 0.5, opacity: 0, duration: 1.2, stagger: 0.04, 
+            ease: "elastic.out(1, 0.5)", clearProps: "all"
+        });
+    });
+
+    // --- 3. LOGIC MODAL & VIDEO FULL MÀN HÌNH (DẠNG RẠP CHIẾU PHIM) ---
+    
+    // [TỰ ĐỘNG TẠO HTML & CSS CHO KHUNG FULL SCREEN]
+    // Đoạn này giúp bạn không cần sửa file HTML hay CSS thủ công
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.innerHTML = `
+        .fullscreen-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9); z-index: 9999;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+        }
+        .fullscreen-overlay.active { opacity: 1; pointer-events: all; }
+        .fullscreen-video-container {
+            width: 90%; height: 80%; background: #000; border-radius: 20px;
+            box-shadow: 0 0 50px rgba(255, 107, 107, 0.5); overflow: hidden; position: relative;
+        }
+        .close-fullscreen-btn {
+            position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem;
+            background: none; border: none; cursor: pointer; font-weight: bold; z-index: 10000;
+        }
+        .close-fullscreen-btn:hover { color: #FF6B6B; transform: scale(1.2); }
+    `;
+    document.head.appendChild(fullscreenStyle);
+
+    const fullscreenHTML = `
+        <div class="fullscreen-overlay" id="fullscreen-overlay">
+            <button class="close-fullscreen-btn" onclick="closeFullscreenVideo()">&times;</button>
+            <div class="fullscreen-video-container" id="fullscreen-video-container"></div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', fullscreenHTML);
+
+    // --- CÁC HÀM XỬ LÝ ---
+
+    function scrollToLessons() {
+        document.getElementById('lessons').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const overlay = document.getElementById('overlay');
+    const modalTitle = document.getElementById('modal-title');
+    const overlayContent = document.querySelector('.overlay-content');
+    const videoContainer = document.getElementById('video-container'); // Khung nhỏ (nếu còn dùng)
+
+    // Các phần tử Fullscreen vừa tạo
+    const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+    const fullscreenContainer = document.getElementById('fullscreen-video-container');
+
+    // Hàm mở bảng thông tin bài học (Popup nhỏ)
+    function openLesson(id, data) {
+        modalTitle.innerText = "Day " + id + ": " + data.title;
+        currentVideoId = data.videoId;
+
+        overlay.classList.add('active');
+        gsap.fromTo(overlayContent,
+            { scale: 0.7, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.6, ease: "elastic.out(0.8, 0.6)" }
+        );
+    }
+
+    // Hàm đóng bảng thông tin
+    function closeLesson() {
+        gsap.to(overlayContent,
+            { scale: 0.8, opacity: 0, duration: 0.3, ease: "power2.in", onComplete: () => {
+                overlay.classList.remove('active');
+            }}
+        );
+    }
+
+    // --- HÀM QUAN TRỌNG: PHÁT VIDEO FULL MÀN HÌNH ---
+    function playVideo() {
+        if (!currentVideoId) {
+            alert("Video đang được cập nhật!");
+            return;
+        }
+
+        // 1. Chèn Iframe Google Drive vào khung Fullscreen
+        fullscreenContainer.innerHTML = `
+            <iframe 
+                src="https://drive.google.com/file/d/${currentVideoId}/preview" 
+                width="100%" 
+                height="100%" 
+                style="border: none;"
+                allow="autoplay; fullscreen">
+            </iframe>
+        `;
+
+        // 2. Hiển thị lớp phủ
+        fullscreenOverlay.classList.add('active');
+
+        // 3. Hiệu ứng phóng to
+        gsap.fromTo(fullscreenContainer, 
+            { scale: 0.5, opacity: 0 }, 
+            { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.2)" }
+        );
+    }
+
+    // Hàm đóng video Full màn hình
+    function closeFullscreenVideo() {
+        gsap.to(fullscreenContainer, {
+            scale: 0.5, opacity: 0, duration: 0.3, ease: "power2.in",
+            onComplete: () => {
+                fullscreenOverlay.classList.remove('active');
+                fullscreenContainer.innerHTML = ""; // Xóa iframe để tắt tiếng
+            }
+        });
+    }
+
+    // Sự kiện Click ra ngoài để đóng
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeLesson();
+    });
+    
+    // Click vào vùng đen khi xem video thì tắt video
+    fullscreenOverlay.addEventListener('click', (e) => {
+        if (e.target === fullscreenOverlay) closeFullscreenVideo();
+    });
+    </script>
+
+    <script>
+    /* ================= 1. CẤU HÌNH API & HỆ THỐNG ================= */
+    const API_KEY = "AIzaSyClCovZywRCZyMydsv9pPD2P_Pd2UTKzdU";
+    // Đảm bảo sử dụng v1beta và :generateContent để tránh lỗi "Model not found"
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+
+    const SYSTEM_PROMPT = `Bạn là một Giám khảo IELTS chuyên nghiệp (Band 9.0). 
+    Nhiệm vụ của bạn là hỗ trợ học sinh luyện Speaking:
+    - Nếu học sinh nói tiếng Anh: Sửa lỗi ngữ pháp và gợi ý 3 cụm từ nâng cao.
+    - Nếu học sinh hỏi mẹo: Trả lời ngắn gọn bằng tiếng Việt, có gạch đầu dòng.
+    - Luôn phản hồi lịch sự, chuyên nghiệp và khích lệ.`;
+
+    /* ================= 2. ĐIỀU KHIỂN GIAO DIỆN CHAT (UI) ================= */
+    function toggleChat() {
+        const wrapper = document.getElementById("chatbot-wrapper");
+        wrapper.classList.toggle("active");
+        
+        // Đồng bộ thuộc tính display để hiển thị khung chat
+        if (wrapper.classList.contains("active")) {
+            wrapper.style.display = "flex";
+            scrollToBottom();
+            
+            // Gửi lời chào nếu hộp chat trống
+            const chatBox = document.getElementById("chatBox");
+            if (chatBox.children.length === 0) {
+                setTimeout(() => {
+                    addMessage("AI", "Chào mừng bạn đến với IELTS Wonderland! Tôi là giám khảo AI, hãy gửi câu trả lời Speaking của bạn để tôi nhận xét nhé.");
+                }, 500);
+            }
+        } else {
+            wrapper.style.display = "none";
+        }
+    }
+
+    function scrollToBottom() {
+        const chatBox = document.getElementById("chatBox");
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    // Lắng nghe sự kiện Enter để gửi tin nhắn
+    document.getElementById("userInput").addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+
+    /* ================= 3. XỬ LÝ LOGIC CHAT & GỌI API ================= */
+    function addMessage(role, text) {
+        const chatBox = document.getElementById("chatBox");
+        const msgDiv = document.createElement("div");
+        
+        // Gán class để hiển thị đúng giao diện (User bên phải, AI bên trái)
+        msgDiv.classList.add("msg-bubble");
+        msgDiv.classList.add(role === "Bạn" ? "user-msg" : "ai-msg");
+
+        msgDiv.innerHTML = `<strong>${role}:</strong><br>${text.replace(/\n/g, '<br>')}`;
+        chatBox.appendChild(msgDiv);
+        scrollToBottom();
+        return msgDiv;
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById("userInput");
+        const userText = input.value.trim();
+
+        if (!userText) return;
+
+        // Hiển thị tin nhắn của người dùng
+        addMessage("Bạn", userText);
+        input.value = "";
+        input.style.height = "45px"; // Reset chiều cao textarea
+
+        // Tạo hiệu ứng AI đang suy nghĩ
+        const typingDiv = addMessage("AI", "...");
+        typingDiv.classList.add("typing-dots");
+
+        try {
+            const response = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{ text: `${SYSTEM_PROMPT}\n\nHọc sinh nói: ${userText}` }]
+                    }]
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.error) throw new Error(data.error.message);
+
+            if (data.candidates && data.candidates[0]) {
+                const aiText = data.candidates[0].content.parts[0].text;
+                typingDiv.classList.remove("typing-dots");
+                typingDiv.innerHTML = `<strong>AI Tutor:</strong><br>`;
+                
+                // Hiệu ứng Typewriter (Gõ chữ từng từ)
+                let i = 0;
+                const typingInterval = setInterval(() => {
+                    if (i < aiText.length) {
+                        typingDiv.innerHTML += aiText[i] === '\n' ? '<br>' : aiText[i];
+                        i++;
+                        scrollToBottom();
+                    } else {
+                        clearInterval(typingInterval);
+                    }
+                }, 10);
+            }
+        } catch (error) {
+            typingDiv.innerHTML = `<span style="color:red">❌ Lỗi kết nối: ${error.message}</span>`;
+            console.error("Lỗi:", error);
+        }
+    }
+
+    /* ================= 4. LOGIC BÀI HỌC & CANVAS (MÔI TRƯỜNG WEB) ================= */
+    function openLesson(num, data) {
+        document.getElementById('modal-title').innerText = "Day " + num + ": " + data.title;
+        currentVideoId = data.videoId;
+        document.getElementById('overlay').classList.add('active');
+    }
+
+    function closeLesson() {
+        document.getElementById('overlay').classList.remove('active');
+        const container = document.getElementById("video-container");
+        container.innerHTML = `<div style="text-align: center">🎙️<br>Speaking Practice Arena</div>`; // Tắt video khi đóng
+    }
+
+    function playVideo() {
+        if (!currentVideoId) return alert("Video đang được cập nhật!");
+        const container = document.getElementById("video-container");
+        container.innerHTML = `<iframe src="https://drive.google.com/file/d/${currentVideoId}/preview" width="100%" height="100%" style="border:none; border-radius:20px;" allow="autoplay"></iframe>`;
+    }
+
+    function scrollToLessons() {
+        document.getElementById('lessons').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Canvas Background đơn giản hóa để chạy mượt
+    (function() {
+        const canvas = document.getElementById('animal-canvas');
+        const ctx = canvas.getContext('2d');
+        let w, h;
+        const init = () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; };
+        init(); window.addEventListener('resize', init);
+        function animate() {
+            ctx.clearRect(0, 0, w, h);
+            requestAnimationFrame(animate);
+        }
+        animate();
+    })();
+</script>
+</body>
 </html>
